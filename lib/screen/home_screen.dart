@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:market_app/model/phone.dart';
+import 'package:market_app/screen/cart_screen.dart';
 import 'package:market_app/screen/detail_screen.dart';
 import 'package:market_app/screen/info_screen.dart';
 import 'package:market_app/util/widget.dart';
-
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -21,23 +21,19 @@ class HomeScreen extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.search,
-                color: Colors.black,
-              )),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return CartScreen();
+                }));
+              },              icon: Icon(
                 Icons.shopping_cart_outlined,
                 color: Colors.black,
               )),
           IconButton(
               onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) {
-                      return InfoScreen();
-                    }));
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return InfoScreen();
+                }));
               },
               icon: Icon(
                 Icons.person_outline,
@@ -59,21 +55,28 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                            return DetailScreen(phone: phone);
-                          }));
+                        return DetailScreen(phone: phone);
+                      }));
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Card(
+                          elevation: 4,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12.0)),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(12.0),
                             child: Container(
                               padding: EdgeInsets.all(10),
-                              child: Image.network(phone.phoneImage, width: MediaQuery.of(context).size.width * 0.5 -20, height: MediaQuery.of(context).size.height * 0.2 -40,),
-                              decoration: BoxDecoration(color: phone.phoneColor),
+                              child: Image.network(
+                                phone.phoneImage,
+                                width: MediaQuery.of(context).size.width * 0.5 -
+                                    20,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.2 -
+                                        50,
+                              ),
                             ),
                           ),
                         ),

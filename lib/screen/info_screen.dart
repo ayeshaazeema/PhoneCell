@@ -36,8 +36,7 @@ class InfoScreen extends StatelessWidget {
                 Text(
                   'Ayesha Azeema',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                Text('Bekasi')
+                )
               ],
             ),
           ),
