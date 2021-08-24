@@ -26,7 +26,7 @@ class _DetailScreenState extends State<DetailScreen> {
           children: [
             Container(
               padding: EdgeInsets.symmetric(vertical: 25),
-              color: widget.phone.phoneColor,
+              color: Colors.grey,
               child: Image.network(
                 widget.phone.phoneImage,
                 width: double.infinity,
@@ -42,7 +42,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: Icon(Icons.arrow_back_ios, color: Colors.black)),
+                      icon: Icon(Icons.arrow_back_ios, color: Colors.white)),
                   Stack(
                     alignment: Alignment.topRight,
                     children: [
@@ -55,7 +55,7 @@ class _DetailScreenState extends State<DetailScreen> {
                           },
                           icon: Icon(
                             Icons.shopping_cart_outlined,
-                            color: Colors.black,
+                            color: Colors.white,
                           )),
                       cartList.length > 0
                           ? Badge(numberValue: (cartList.length).toString())
@@ -136,14 +136,14 @@ class _DetailScreenState extends State<DetailScreen> {
                             },
                             style: ElevatedButton.styleFrom(
                                 padding: EdgeInsets.all(14.0),
-                                primary: Color.fromARGB(0, 255, 255, 255)),
+                                primary: Colors.black45),
                             child: Icon(Icons.add_shopping_cart_outlined)),
                         Expanded(
                           child: Container(
                             margin: EdgeInsets.only(left: 16),
                             child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    primary: Color.fromARGB(1000, 4, 93, 42),
+                                    primary: Colors.black45,
                                     padding: EdgeInsets.all(16.0)),
                                 onPressed: () {
                                   Navigator.push(context,

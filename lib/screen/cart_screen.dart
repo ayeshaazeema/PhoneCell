@@ -37,7 +37,7 @@ class _CartScreenState extends State<CartScreen> {
         title: Text(
           'Cart',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       floatingActionButton: Visibility(
@@ -52,7 +52,7 @@ class _CartScreenState extends State<CartScreen> {
               }));
             },
             style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(1000, 4, 93, 42)),
+                primary: Colors.black45),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [Text('Checkout'), Icon(Icons.arrow_forward_ios)],
@@ -63,76 +63,76 @@ class _CartScreenState extends State<CartScreen> {
       body: Container(
           child: cartList.length > 0
               ? Padding(
-            padding:
-            const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                var bike = findBike(cartList[index]);
-                return Card(
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                      borderRadius:
-                      BorderRadius.all(Radius.circular(10))),
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.only(
-                                topLeft: Radius.circular(10),
-                                bottomLeft: Radius.circular(10)),
-                            child: Container(
-                              child: Image.network(bike.phoneImage),
-                              decoration:
-                              BoxDecoration(color: bike.phoneColor),
-                            ),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                  child: ListView.builder(
+                    itemBuilder: (context, index) {
+                      var phone = findPhone(cartList[index]);
+                      return Card(
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(10))),
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(10),
+                                      bottomLeft: Radius.circular(10)),
+                                  child: Container(
+                                    child: Image.network(phone.phoneImage),
+                                    decoration:
+                                        BoxDecoration(color: Colors.grey),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Container(
+                                  margin: EdgeInsets.only(left: 20),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        phone.phoneName,
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                      SizedBox(
+                                        height: 16,
+                                      ),
+                                      Text(rupiahCurrencyFormat
+                                          .format(phone.phonePrice))
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: IconButton(
+                                    onPressed: () {
+                                      deleteItemCart(phone.phoneId);
+                                    },
+                                    icon: Icon(
+                                      Icons.delete,
+                                      color: Colors.grey,
+                                    )),
+                              )
+                            ],
                           ),
                         ),
-                        Expanded(
-                          child: Container(
-                            margin: EdgeInsets.only(left: 20),
-                            child: Column(
-                              crossAxisAlignment:
-                              CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  bike.phoneName,
-                                  style: TextStyle(fontSize: 18),
-                                ),
-                                SizedBox(
-                                  height: 16,
-                                ),
-                                Text(rupiahCurrencyFormat
-                                    .format(bike.phonePrice))
-                              ],
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: IconButton(
-                              onPressed: () {
-                                deleteItemCart(bike.phoneId);
-                              },
-                              icon: Icon(
-                                Icons.delete,
-                                color: Colors.grey,
-                              )),
-                        )
-                      ],
-                    ),
+                      );
+                    },
+                    itemCount: cartList.length,
                   ),
-                );
-              },
-              itemCount: cartList.length,
-            ),
-          )
+                )
               : Center(child: Text('Empty cart, please add some items.'))),
     );
   }
 
-  Phone findBike(Cart cartItem) {
+  Phone findPhone(Cart cartItem) {
     return phoneList.firstWhere((phone) => phone.phoneId == cartItem.phoneId);
   }
 

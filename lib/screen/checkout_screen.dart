@@ -25,6 +25,23 @@ class CheckoutScreen extends StatelessWidget {
           style: TextStyle(fontSize: 18, color: Colors.black),
         ),
       ),
+      body: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  'Payment Succeed!',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -22,22 +22,32 @@ class InfoScreen extends StatelessWidget {
         title: Text(
           'Info',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 18, color: Colors.black),
+          style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  'Ayesha Azeema',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                )
-              ],
+            child: Container(
+              margin: EdgeInsets.only(left: 30, right: 30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    'About This App',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Simply, it is a marketplace app that sells phones.',
+                    style: TextStyle(fontSize: 18), textAlign: TextAlign.center,
+                  )
+                ],
+              ),
             ),
           ),
         ],
