@@ -11,7 +11,7 @@ class Badge extends StatelessWidget {
       margin: EdgeInsets.only(top: 8, right: 4),
       padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100), color: Colors.red),
+          borderRadius: BorderRadius.circular(100), color: Colors.lightBlue),
       child: Text(
         numberValue,
         style: TextStyle(fontSize: 8, color: Colors.white),

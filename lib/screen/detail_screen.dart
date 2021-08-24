@@ -98,7 +98,10 @@ class _DetailScreenState extends State<DetailScreen> {
                             margin: EdgeInsets.only(top: 4),
                             child: Text(
                               widget.phone.phoneBrand,
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black45),
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black45),
                             ),
                           )
                         ],

@@ -37,7 +37,8 @@ class _CartScreenState extends State<CartScreen> {
         title: Text(
           'Cart',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       floatingActionButton: Visibility(
@@ -51,8 +52,7 @@ class _CartScreenState extends State<CartScreen> {
                 return CheckoutScreen();
               }));
             },
-            style: ElevatedButton.styleFrom(
-                primary: Colors.black45),
+            style: ElevatedButton.styleFrom(primary: Colors.black45),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [Text('Checkout'), Icon(Icons.arrow_forward_ios)],
@@ -74,7 +74,7 @@ class _CartScreenState extends State<CartScreen> {
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
                         child: Padding(
-                          padding: const EdgeInsets.all(16),
+                          padding: const EdgeInsets.all(10),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
@@ -92,17 +92,19 @@ class _CartScreenState extends State<CartScreen> {
                               ),
                               Expanded(
                                 child: Container(
-                                  margin: EdgeInsets.only(left: 20),
+                                  margin: EdgeInsets.only(left: 10),
                                   child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         phone.phoneName,
-                                        style: TextStyle(fontSize: 18),
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
                                       ),
                                       SizedBox(
-                                        height: 16,
+                                        height: 4,
                                       ),
                                       Text(rupiahCurrencyFormat
                                           .format(phone.phonePrice))

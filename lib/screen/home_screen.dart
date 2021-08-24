@@ -25,7 +25,8 @@ class HomeScreen extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return CartScreen();
                 }));
-              },              icon: Icon(
+              },
+              icon: Icon(
                 Icons.shopping_cart_outlined,
                 color: Colors.black,
               )),
@@ -69,6 +70,7 @@ class HomeScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12.0),
                             child: Container(
                               padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(color: Colors.grey),
                               child: Image.network(
                                 phone.phoneImage,
                                 width: MediaQuery.of(context).size.width * 0.5 -

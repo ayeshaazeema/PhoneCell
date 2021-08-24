@@ -22,7 +22,8 @@ class InfoScreen extends StatelessWidget {
         title: Text(
           'Info',
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
+          style: TextStyle(
+              fontSize: 18, color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: Row(
@@ -44,7 +45,8 @@ class InfoScreen extends StatelessWidget {
                   ),
                   Text(
                     'Simply, it is a marketplace app that sells phones.',
-                    style: TextStyle(fontSize: 18), textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.center,
                   )
                 ],
               ),
